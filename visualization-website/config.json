@@ -1,0 +1,4 @@
+{
+  "model_server_test": "http://localhost:8000",
+  "model_server": "https://fall21-dm-model-server.herokuapp.com"
+}

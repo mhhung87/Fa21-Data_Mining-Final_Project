@@ -1,0 +1,26 @@
+@import "general";
+
+.search-wrapper {
+  padding-top: 15%;
+  max-width: 350px;
+  min-height: 100vh;
+}
+
+#comp-logo {
+  position: relative;
+
+  &:after {
+    height: 15%;
+    width: 80%;
+    top: 85%;
+    left: 6.5%;
+    background: $color-primary;
+    content: "";
+    position: absolute;
+    z-index: -1
+  }
+}
+
+#input-year {
+  max-width: 30%;
+}

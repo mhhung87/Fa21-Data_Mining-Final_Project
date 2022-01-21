@@ -1,0 +1,154 @@
+@import "general";
+
+.wrapper-result-list {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+#text-slogan {
+  position: relative;
+  text-align: center;
+
+  &:after {
+    height: 15%;
+    width: 45%;
+    top: 85%;
+    left: 27.5%;
+    background: $color-primary;
+    content: "";
+    position: absolute;
+    z-index: -1
+  }
+}
+
+#wrapper-result-base {
+  .img-result-base-artist {
+    margin-bottom: $padding-normal;
+  }
+
+  .style-result-base-name {
+    @extend .f-label-title;
+    @extend .f-weight-regular;
+  }
+
+  .style-result-base-artist {
+    @extend .f-label-subtitle;
+    @extend .f-weight-slim;
+    @extend .color-label-sub;
+  }
+}
+
+.wrapper-result-head {
+  border-bottom: 1px solid rgba($color: #FFFFFF, $alpha: .1);
+  box-sizing: content-box;
+  margin: $padding-normal 0;
+  height: 36px;
+  top: 60px;
+
+  .div-result-head {
+    @extend .color-label-sub;
+    height: 100%;
+    padding: 0 $padding-normal;
+    display: grid;
+    grid-template-columns: [idx] 16px [track] 4fr [artist] 2fr [dura] minmax(120px, 1fr);
+    grid-gap: $padding-normal;
+
+    .div-head-index {
+      justify-self: end;
+    }
+
+    .div-head-duration {
+      justify-self: end;
+    }
+  }
+}
+
+
+.div-result {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  height: 56px;
+  position: relative;
+  padding: 0 $padding-normal;
+  display: grid;
+  grid-gap: $padding-normal;
+  grid-template-columns: [idx] 16px [track] 4fr [artist] 2fr [dura] minmax(120px, 1fr);
+
+  &:hover {
+    background-color: rgba($color: #FFFFFF, $alpha: .1);
+  }
+
+  .div-result-index {
+    justify-self: end;
+
+    .wrapper-result-index {
+      color: $color-label2;
+      position: relative;
+      height: 16px;
+      width: 16px;
+      min-height: 16px;
+      min-width: 16px;
+
+      .style-result-index {
+        position: absolute;
+        top: -4px;
+        // font-variant: tabular-nums;
+        right: 0.25em;
+      }
+    }
+  }
+
+  .div-result-track {
+    justify-self: start;
+
+    .img-result-track-artist {
+      margin-right: $padding-normal;
+    }
+
+    .wraper-result-track-info {
+      padding-right: $padding-half;
+      display: grid;
+      grid-template-rows: [title] auto [artist] auto;
+
+      .style-result-track-name {
+        @extend .f-label-regular;
+        @extend .f-weight-slim;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .style-result-track-artist {
+        @extend .f-label-sub;
+        @extend .f-weight-regular;
+        @extend .color-label-sub;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  .div-result-artist {
+    justify-self: start;
+
+    .style-result-artist {
+      @extend .f-label-sub;
+      @extend .f-weight-slim;
+      @extend .color-label-sub;
+    }
+  }
+
+  & .div-result-duration {
+    justify-self: end;
+    grid-column: dura;
+
+    & .style-result-duration {
+      @extend .f-label-sub;
+      @extend .f-weight-regular;
+      @extend .color-label-sub;
+      display: flex;
+      justify-content: flex-end;
+      font-variant-numeric: tabular-nums;
+      width: 4ch;
+    }
+  }
+}

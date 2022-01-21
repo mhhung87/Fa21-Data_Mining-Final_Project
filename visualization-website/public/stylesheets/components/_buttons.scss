@@ -1,0 +1,44 @@
+@import '../utils/colors';
+
+.btn-primary {
+  color: $color-label1;
+  background-color: $color-primary;
+  border-color: #189845;
+
+  &:hover {
+    color: $color-label1;
+    background-color: #168d40;
+    border-color: #20cf5e;
+  }
+
+  &:focus {
+    color: $color-label1;
+    background-color: #168d40;
+    border-color: #20cf5e;
+    box-shadow: 0 0 0 0.2rem rgba(58,167,97,.5);
+  }
+
+  &:not(:disabled):not(.disabled):active {
+    color: #212529;
+    background-color: #2bde6a;
+    border-color: #083518;
+  }
+}
+
+.btn-spotify {
+  color: $color-label1;
+  background-color: $color-primary;
+  border-radius: 500px;
+  line-height: 2;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  &:hover {
+    color: $color-label1;
+    transform: scale(1.06);
+  }
+
+  &:not(:disabled):not(.disabled):active {
+    transform: scale(1);
+  }
+}

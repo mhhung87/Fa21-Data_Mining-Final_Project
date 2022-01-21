@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap');
+
+$fsize-title: 2rem;
+$fsize-subtitle: 1.2rem;
+$fsize-regular: 1rem;
+$fsize-sub: .875rem;
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: $color-label1;
+}
+
+.f-label-general {
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.f-label-title {
+  @extend .f-label-general;
+  font-size: $fsize-title;
+  line-height: 48px;
+}
+
+.f-label-subtitle {
+  @extend .f-label-general;
+  font-size: $fsize-subtitle;
+  line-height: 28.8px;
+}
+
+.f-label-regular {
+  @extend .f-label-general;
+  font-size: $fsize-regular;
+  line-height: 24px;
+}
+
+.f-label-sub {
+  @extend .f-label-general;
+  font-size: $fsize-sub;
+  line-height: 16px;
+}
+
+.f-weight-regular {
+  font-weight: 400;
+}
+
+.f-weight-slim {
+  font-weight: 200;
+}

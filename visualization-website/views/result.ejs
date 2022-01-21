@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <%- include('utils/head.ejs') %>
+  <link rel='stylesheet' href='/stylesheets/result.css' />
+</head>
+<body>
+  <div class="container wrapper-result-list">
+    <h2 id="text-slogan" class="mb-5">Your potential love song is here.</h2>
+    <div id="wrapper-result-base" class="mb-5">
+      <div class="d-flex flex-column align-items-center">
+        <img class="img-result-base-artist" src="<%= base.cover %>" height="250" width="250">
+        <div class="style-result-base-name"><%= base.name %></div>
+        <div class="style-result-base-artist"><%= base.artist %></div>
+      </div>
+    </div>
+    <div class="wrapper-result-head">
+      <div class="div-result-head">
+        <div class="div-head-index d-flex align-items-center">#</div>
+        <div class="div-head-title d-flex align-items-center">
+          <span class="style-head-title">Title</span>
+        </div>
+        <div class="div-head-album d-flex align-items-center">
+          <span class="style-head-album">Album</span>
+        </div>
+        <div class="div-head-duration d-flex align-items-center">
+          <span class="style-head-duration">Length</span>
+        </div>
+      </div>
+    </div>
+    <div id="wrapper-results" class="mb-5">
+      <% for (let i=0; i<results.length; i++) { %> 
+      <div class="div-result">
+        <div class="div-result-index d-flex align-items-center" role="gridcell">
+          <div class="wrapper-result-index d-inline-block">
+            <span class="style-result-index"><%= i+1 %></span>
+          </div>
+        </div>
+        <div class="div-result-track d-flex align-items-center" role="gridcell">
+          <img class="img-result-track-artist" src="<%= results[i].cover %>" height="40" width="40">
+          <div class="wraper-result-track-info">
+            <div class="style-result-track-name"><%= results[i].name %></div>
+            <span class="style-result-track-artist"><%= results[i].artist %></span>
+          </div>
+        </div>
+        <div class="div-result-artist d-flex align-items-center" role="gridcell">
+          <span class="style-result-artist"><%= results[i].album %></span>
+        </div>
+        <div class="div-result-duration d-flex align-items-center" role="gridcell">
+          <div class="style-result-duration"><%= results[i].duration %></div>
+        </div>
+      </div>
+      <% } %> 
+    </div>
+    <div class="d-flex justify-content-center">
+      <a class="btn btn-spotify" href="/">BACK TO HOME</a>
+    </div>
+  </div>
+</body>
+</html>
